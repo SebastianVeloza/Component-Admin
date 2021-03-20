@@ -12,6 +12,12 @@ const data = [
     { id: 4, username: "xlunax3", email: "luna.1@hotmail.com", name: "kar", type_user: "Admin", maxsize: 2.5 },
 ];
 class TablaUser extends React.Component {
+
+  constructor() {
+    super();
+    this.mostrarModalActualizar = this.mostrarModalActualizar.bind(this);
+    this.eliminar = this.eliminar.bind(this);
+  }
     state = {
         data: data,
         modalActualizar: false,
@@ -98,6 +104,10 @@ class TablaUser extends React.Component {
       };
     
       render() {
+        const sebveloza = this.state.data.map(dato =>
+          <RegistroFila dato = {dato}
+          mostrarModalActualizar = {this.mostrarModalActualizar}
+          eliminar = {this.eliminar}/>);
         
         return (
           <>
@@ -118,27 +128,8 @@ class TablaUser extends React.Component {
                     <th>Acción</th>
                   </tr>
                 </thead>
-    
                 <tbody>
-                  {this.state.data.map((dato) => (
-                    <tr key={dato.id}>
-                      <td>{dato.id}</td>
-                      <td>{dato.username}</td>
-                      <td>{dato.email}</td>
-                      <td>{dato.name}</td>
-                      <td>{dato.type_user}</td>
-                      <td>{dato.maxsize}</td>
-                      <td>
-                        <Button
-                          color="primary"
-                          onClick={() => this.mostrarModalActualizar(dato)}
-                        >
-                          Editar
-                        </Button>{" "}
-                        <Button color="danger" onClick={()=> this.eliminar(dato)}>Eliminar</Button>
-                      </td>
-                    </tr>
-                  ))}
+                  {sebveloza}
                 </tbody>
               </Table>
             </Container>
@@ -331,6 +322,31 @@ class TablaUser extends React.Component {
         );
       }
     }
+    class RegistroFila extends React.Component {
 
+
+      render() {
+          const dato = this.props.dato;
+          return (
+            <tr key={dato.id}>
+            <td>{dato.id}</td>
+            <td>{dato.username}</td>
+            <td>{dato.email}</td>
+            <td>{dato.name}</td>
+            <td>{dato.type_user}</td>
+            <td>{dato.maxsize}</td>
+            <td>
+              <Button
+                color="primary"
+                onClick={()=> this.props.mostrarModalActualizar(dato)}
+              >
+                Editar
+              </Button>{" "}
+              <Button color="danger" onClick={()=> this.props.eliminar(dato)}>Eliminar</Button>
+            </td>
+          </tr>
+          );
+      }
+  }
 
 export default TablaUser;
