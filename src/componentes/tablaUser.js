@@ -6,10 +6,10 @@ import { Table, Button, Container, Modal, ModalBody, ModalHeader, FormGroup, Mod
 
 
 const data = [
-    { id: 1, username: "xlunax", email: "luna.1@hotmail.com", name: "karen luna", type_user: "Admin", maxsize: 2.5 },
-    { id: 2, username: "xlunax1", email: "luna.1@hotmail.com", name: "karen luna", type_user: "Admin", maxsize: 2.5 },
-    { id: 3, username: "xlunax2", email: "luna.1@hotmail.com", name: "karen luna", type_user: "Admin", maxsize: 2.5 },
-    { id: 4, username: "xlunax3", email: "luna.1@hotmail.com", name: "karen luna", type_user: "Admin", maxsize: 2.5 },
+    { id: 1, username: "xlunax", email: "luna.1@hotmail.com", name: "kl", type_user: "Admin", maxsize: 2.5 },
+    { id: 2, username: "xlunax1", email: "luna.1@hotmail.com", name: "kc", type_user: "Admin", maxsize: 2.5 },
+    { id: 3, username: "xlunax2", email: "luna.1@hotmail.com", name: "kd", type_user: "Admin", maxsize: 2.5 },
+    { id: 4, username: "xlunax3", email: "luna.1@hotmail.com", name: "kar", type_user: "Admin", maxsize: 2.5 },
 ];
 class TablaUser extends React.Component {
     state = {
