@@ -104,7 +104,7 @@ class TablaUser extends React.Component {
       };
     
       render() {
-        const sebveloza = this.state.data.map(dato =>
+        const tabladinamica = this.state.data.map(dato =>
           <RegistroFila dato = {dato}
           mostrarModalActualizar = {this.mostrarModalActualizar}
           eliminar = {this.eliminar}/>);
@@ -129,7 +129,7 @@ class TablaUser extends React.Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {sebveloza}
+                  {tabladinamica}
                 </tbody>
               </Table>
             </Container>
